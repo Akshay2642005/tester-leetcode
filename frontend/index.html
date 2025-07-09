@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeetCode Integration</title>
+    <style>
+        body { font-family: Arial, sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; background-color: #f0f2f5; margin: 0; }
+        .container { background-color: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); text-align: center; }
+        h1 { color: #333; margin-bottom: 20px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input[type="text"] {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 80%; /* Adjust as needed */
+            max-width: 300px;
+            box-sizing: border-box; /* Include padding in width */
+            font-size: 1em;
+        }
+        button { background-color: #007bff; color: white; padding: 12px 25px; border: none; border-radius: 5px; font-size: 1.1em; cursor: pointer; transition: background-color 0.3s ease; }
+        button:hover { background-color: #0056b3; }
+        #statusMessage { margin-top: 20px; font-size: 1em; color: #555; }
+        #extensionIdDisplay { margin-top: 10px; font-size: 0.8em; color: #777; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>LeetCode Integration</h1>
+        <label for="leetcodeUsername">Your LeetCode Username:</label>
+        <input type="text" id="leetcodeUsername" placeholder="e.g., your_leet_handle">
+        <button id="leetcodeLoginButton">Login with LeetCode</button>
+        <p id="statusMessage">Click the button to start the process.</p>
+        <p id="extensionIdDisplay">Extension ID: <span id="extensionId">N/A (handled by extension internally)</span></p>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

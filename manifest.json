@@ -1,0 +1,48 @@
+{
+  "manifest_version": 3,
+  "name": "LeetCode Token Auto Sender",
+  "version": "1.2",
+  "description": "Automatically sends LeetCode session and CSRF tokens to a local server.",
+  "permissions": [
+    "cookies",
+    "scripting",
+    "tabs",
+    "activeTab",
+    "storage"
+  ],
+  "host_permissions": [
+    "*://*.leetcode.com/*",
+    "http://localhost:3001/",
+    "http://127.0.0.1:5500/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://leetcode.com/*",
+        "*://www.leetcode.com/*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    },
+    {
+      "matches": [
+        "http://127.0.0.1:5500/*"
+      ],
+      "js": [
+        "frontend_bridge.js"
+      ]
+    }
+  ],
+  "externally_connectable": {
+    "matches": [
+      "http://127.0.0.1:5500/*"
+    ]
+  },
+  "action": {
+    "default_title": "LeetCode Token Auto Sender"
+  }
+}
